@@ -5,6 +5,7 @@ settings_local.py
 settings_test.py
 urls_local.py
 .idea
+.venv
 applications
 libs
 *.db

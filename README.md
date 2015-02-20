@@ -28,6 +28,21 @@ Required `CLOUDCIX` and `OPENSTACK` settings
     CLOUDCIX_API_ID_MEMBER = 2243
     OPENSTACK_KEYSTONE_URL = 'http://keystone.cloudcix.com:5000/v3'
 
+As an alternative when used from console the settings can be set as environment
+variables
+
+
+    os.environ['CLOUDCIX_SERVER_URL'] = 'https://api.cloudcix.com/'
+
+utils method get_admin_token and get_admin_session, will require you to set
+following environment variables as well
+
+
+    os.environ['CLOUDCIX_API_USERNAME'] = 'user@cloudcix.com'
+    os.environ['CLOUDCIX_API_PASSWORD'] = 'super53cr3t3'
+    os.environ['CLOUDCIX_API_ID_MEMBER'] = 2243
+    os.environ['OPENSTACK_KEYSTONE_URL'] = 'http://keystone.cloudcix.com:5000/v3'
+
 # Sample usage #
 
 ## Use the language service ##

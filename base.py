@@ -11,9 +11,10 @@ from requests.auth import AuthBase
 # local
 from .utils import settings
 
-
-CLOUDCIX_SERVER_URL = getattr(settings, 'CLOUDCIX_SERVER_URL', None) or \
-    os.environ['CLOUDCIX_SERVER_URL']
+try:
+    CLOUDCIX_SERVER_URL = getattr(settings, 'CLOUDCIX_SERVER_URL', None)
+except ImportError:
+    CLOUDCIX_SERVER_URL = os.environ['CLOUDCIX_SERVER_URL']
 
 
 class TokenAuth(AuthBase):
