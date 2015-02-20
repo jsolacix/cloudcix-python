@@ -1,0 +1,14 @@
+.DS_Store
+*.pyo
+*.pyc
+settings_local.py
+settings_test.py
+urls_local.py
+.idea
+applications
+libs
+*.db
+log.*
+*.log
+deployment/.vagrant
+*.sqlite
