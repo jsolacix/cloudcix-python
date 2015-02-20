@@ -6,7 +6,8 @@ import logging
 from keystoneclient import access
 from keystoneclient import exceptions
 from keystoneclient import utils
-from keystoneclient.auth.identity.v3 import AuthMethod, Auth
+from keystoneclient.auth.identity.v3 import AuthMethod, Auth, \
+    Token as KeystoneTokenAuth
 from keystoneclient.i18n import _
 from oslo.config import cfg
 

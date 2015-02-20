@@ -6,13 +6,12 @@ import os
 # libs
 from keystoneclient.session import Session as KeystoneSession
 from keystoneclient.v3.client import Client as KeystoneClient
-from keystoneclient.auth.identity.v3 import Token as KeystoneTokenAuth
 
 # local
 from .cloudcixauth import CloudCIXAuth
 
-__all__ = ['KeystoneSession', 'KeystoneClient', 'KeystoneTokenAuth',
-           'settings', 'get_admin_session', 'get_admin_client']
+__all__ = ['KeystoneSession', 'KeystoneClient', 'settings',
+           'get_admin_session', 'get_admin_client']
 
 
 def new_method_proxy(func):

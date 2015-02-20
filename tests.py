@@ -16,8 +16,8 @@ sys.path.insert(0, ROOT('../'))
 os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'cloudcix_sdk.settings_local'
 from cloudcix_sdk import api
 from cloudcix_sdk.utils import (get_admin_session, get_admin_client, settings,
-    KeystoneSession, KeystoneClient, KeystoneTokenAuth)
-from cloudcix_sdk.cloudcixauth import CloudCIXAuth
+    KeystoneSession, KeystoneClient)
+from cloudcix_sdk.cloudcixauth import CloudCIXAuth, KeystoneTokenAuth
 from keystoneclient.exceptions import NotFound
 
 
