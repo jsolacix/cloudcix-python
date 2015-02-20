@@ -15,10 +15,12 @@ necessary settings.
 
 Example when used with django (in manage.py add): 
 
+
     import os
     os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'django.conf.settings'
 
 Required `CLOUDCIX` and `OPENSTACK` settings
+
 
     CLOUDCIX_SERVER_URL = 'https://api.cloudcix.com'
     CLOUDCIX_API_USERNAME = 'user@cloudcix.com'
@@ -30,6 +32,7 @@ Required `CLOUDCIX` and `OPENSTACK` settings
 
 ## Use the language service ##
 
+
     from cloudcix_sdk import api
     from cloudcix_sdk.utils import get_admin_session
     
@@ -40,6 +43,7 @@ Required `CLOUDCIX` and `OPENSTACK` settings
     api.membership.language.list()
     
 ## Create token for a User, and read the User Address ##
+
 
     from cloudcix_sdk import api
     from cloudcix_sdk.cloudcixauth import CloudCIXAuth
@@ -90,6 +94,7 @@ Required `CLOUDCIX` and `OPENSTACK` settings
         pass
 
 ## Given an expiring token, get a new token for further calls ##
+
 
     from cloudcix_sdk.utils import KeystoneTokenAuth, KeystoneSession
     
