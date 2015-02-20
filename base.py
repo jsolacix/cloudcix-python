@@ -1,6 +1,7 @@
 # python
 from __future__ import unicode_literals
 import json
+import os
 import re
 
 # libs
@@ -9,6 +10,10 @@ from requests.auth import AuthBase
 
 # local
 from .utils import settings
+
+
+CLOUDCIX_SERVER_URL = getattr(settings, 'CLOUDCIX_SERVER_URL', None) or \
+    os.environ['CLOUDCIX_SERVER_URL']
 
 
 class TokenAuth(AuthBase):
@@ -62,7 +67,7 @@ class APIClient(object):
         :returns: CloudCIX server url
         :rtype: unicode
         """
-        self.server_url = settings.CLOUDCIX_SERVER_URL.rstrip('/')
+        self.server_url = CLOUDCIX_SERVER_URL.rstrip('/')
         return self.server_url
 
     def create(self, token=None, data=None, params=None, **kwargs):

@@ -52,20 +52,37 @@ class LazySettings(object):
 settings = LazySettings()
 
 
+def get_required_settings():
+    settings_obj = dict()
+    try:
+        settings_obj['auth_url'] = settings.OPENSTACK_KEYSTONE_URL
+        settings_obj['username'] = settings.CLOUDCIX_API_USERNAME
+        settings_obj['password'] = settings.CLOUDCIX_API_PASSWORD
+        settings_obj['idMember'] = settings.CLOUDCIX_API_ID_MEMBER
+    except ImportError:
+        settings_obj['auth_url'] = os.environ['OPENSTACK_KEYSTONE_URL']
+        settings_obj['username'] = os.environ['CLOUDCIX_API_USERNAME']
+        settings_obj['password'] = os.environ['CLOUDCIX_API_PASSWORD']
+        settings_obj['idMember'] = os.environ['CLOUDCIX_API_ID_MEMBER']
+    return settings_obj
+
+
 def get_admin_session():
+    settings_obj = get_required_settings()
     t = CloudCIXAuth(
-        auth_url=settings.OPENSTACK_KEYSTONE_URL,
-        username=settings.CLOUDCIX_API_USERNAME,
-        password=settings.CLOUDCIX_API_PASSWORD,
-        idMember=settings.CLOUDCIX_API_ID_MEMBER,
-        scope={'domain': {'id': settings.CLOUDCIX_API_ID_MEMBER}})
+        auth_url=settings_obj['auth_url'],
+        username=settings_obj['username'],
+        password=settings_obj['password'],
+        idMember=settings_obj['idMember'],
+        scope={'domain': {'id': settings_obj['idMember']}})
     admin_session = KeystoneSession(auth=t)
     admin_session.get_token()
     return admin_session
 
 
 def get_admin_client():
+    settings_obj = get_required_settings()
     admin_session = get_admin_session()
     return KeystoneClient(session=admin_session,
-                          auth_url=settings.OPENSTACK_KEYSTONE_URL,
-                          endpoint_override=settings.OPENSTACK_KEYSTONE_URL)
+                          auth_url=settings_obj['auth_url'],
+                          endpoint_override=settings_obj['auth_url'])
