@@ -2,6 +2,10 @@
 
 An Python SDK implementation to make the work with CloudCIX API fun.
 
+API Docs: http://docs.cloudcix.com
+
+CloudCIX is developed by CIX: http://www.cix.ie
+
 # Installation #
 
 
