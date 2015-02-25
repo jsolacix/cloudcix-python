@@ -4,8 +4,8 @@ An Python SDK implementation to make the work with CloudCIX API fun.
 
 # Installation #
 
-You should install the requirements from pip-requires before your start working
-with the SDK. 
+
+    pip install cloudcix
 
 # Required settings #
 
