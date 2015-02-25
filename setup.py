@@ -26,12 +26,12 @@ setup(
     include_package_data=True,
     license='Apache 2.0',
     classifiers=(
-        'Development Status :: 5 - Production/Stable'
-        'Intended Audience :: Information Technology'
-        'Intended Audience :: Developers'
-        'License :: OSI Approved :: Apache Software License'
-        'Natural Language :: English'
-        'Programming Language :: Python'
-        'Programming Language :: Python :: 2'
-        'Programming Language :: Python :: 2.7'
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache Software License',
+        'Natural Language :: English',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
     ))
