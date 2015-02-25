@@ -15,7 +15,7 @@ setup(
     long_description=readme,
     author='CloudCIX',
     author_email='support@cloudcix.com',
-    url='http://www.cix.ie',
+    url='https://github.com/CloudCIX/cloudcix-python',
     packages=[
         'cloudcix'
     ],
