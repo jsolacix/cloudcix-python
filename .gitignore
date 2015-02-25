@@ -60,3 +60,4 @@ settings_test.py
 .idea
 .venv
 log.*
+README.txt

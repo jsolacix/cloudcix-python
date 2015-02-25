@@ -2,7 +2,7 @@
 
 from setuptools import setup
 import cloudcix
-with open('README.md', 'r') as f:
+with open('README.txt', 'r') as f:
     readme = f.read()
 
 with open('requirements.txt', 'r') as f:
