@@ -48,8 +48,8 @@ following environment variables as well
 ## Use the language service ##
 
 
-    from cloudcix_sdk import api
-    from cloudcix_sdk.utils import get_admin_session
+    from cloudcix import api
+    from cloudcix.utils import get_admin_session
     
     # get an admin token
     token = get_admin_session().get_token()
@@ -60,9 +60,9 @@ following environment variables as well
 ## Create token for a User, and read the User Address ##
 
 
-    from cloudcix_sdk import api
-    from cloudcix_sdk.cloudcixauth import CloudCIXAuth
-    from cloudcix_sdk.utils import KeystoneSession, KeystoneClient, \
+    from cloudcix import api
+    from cloudcix.cloudcixauth import CloudCIXAuth
+    from cloudcix.utils import KeystoneSession, KeystoneClient, \
         get_admin_client
     from keystoneclient.exceptions import NotFound
 
@@ -111,7 +111,7 @@ following environment variables as well
 ## Given an expiring token, get a new token for further calls ##
 
 
-    from cloudcix_sdk.utils import KeystoneTokenAuth, KeystoneSession
+    from cloudcix.utils import KeystoneTokenAuth, KeystoneSession
     
     expiring_token = 'xyz123'
     auth = KeystoneTokenAuth(

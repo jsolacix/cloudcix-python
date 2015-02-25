@@ -5,7 +5,6 @@ import sys
 import unittest
 
 # libs
-from keystoneclient.exceptions import AuthorizationFailure
 
 # test imports
 
@@ -13,11 +12,11 @@ ROOT = lambda base: os.path.abspath(os.path.join(
     os.path.dirname(__file__), base).replace('\\', '/'))
 sys.path.insert(0, ROOT('../'))
 
-os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'cloudcix_sdk.settings_local'
-from cloudcix_sdk import api
-from cloudcix_sdk.utils import (get_admin_session, get_admin_client, settings,
-    KeystoneSession, KeystoneClient)
-from cloudcix_sdk.cloudcixauth import CloudCIXAuth, KeystoneTokenAuth
+os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'cloudcix.settings_local'
+from cloudcix import api
+from cloudcix.utils import (get_admin_session, get_admin_client, settings,
+    KeystoneSession)
+from cloudcix.cloudcixauth import CloudCIXAuth, KeystoneTokenAuth
 from keystoneclient.exceptions import NotFound
 
 
