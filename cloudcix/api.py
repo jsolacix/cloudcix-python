@@ -52,7 +52,7 @@ class antenna(object):
 
 
 # Contacts Services
-class contacts_cli(object):
+class contacts(object):
     _application_name = 'Contacts'
     campaign = APIClient(application=_application_name,
                          service_uri='Campaign/')
