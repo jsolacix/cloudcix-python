@@ -14,14 +14,20 @@ CloudCIX is developed by CIX: http://www.cix.ie
 # Required settings #
 
 When you run your project you should set the settings variable 
-`CLOUDCIX_SETTINGS_MODULE` to point to the module that contains all the 
-necessary settings.
+`CLOUDCIX_SETTINGS_MODULE` to point to the module that contains the settings
+object.
 
-Example when used with django (in manage.py add): 
+Example django lazy settings object (object should be specified after ":"):
 
 
     import os
-    os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'django.conf.settings'
+    os.environ.setdefault("CLOUDCIX_SETTINGS_MODULE", "django.conf:settings")
+
+Example for a module based settings:
+
+
+    import os
+    os.environ.setdefault("CLOUDCIX_SETTINGS_MODULE", "my.project.my_settings")
 
 Required `CLOUDCIX` and `OPENSTACK` settings
 
@@ -44,7 +50,7 @@ following environment variables as well
 
     os.environ['CLOUDCIX_API_USERNAME'] = 'user@cloudcix.com'
     os.environ['CLOUDCIX_API_PASSWORD'] = 'super53cr3t3'
-    os.environ['CLOUDCIX_API_ID_MEMBER'] = 2243
+    os.environ['CLOUDCIX_API_ID_MEMBER'] = '2243'
     os.environ['OPENSTACK_KEYSTONE_URL'] = 'http://keystone.cloudcix.com:5000/v3'
 
 # Sample usage #

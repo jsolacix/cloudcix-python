@@ -12,7 +12,7 @@ ROOT = lambda base: os.path.abspath(os.path.join(
     os.path.dirname(__file__), base).replace('\\', '/'))
 sys.path.insert(0, ROOT('../'))
 
-os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'cloudcix.settings_local'
+os.environ['CLOUDCIX_SETTINGS_MODULE'] = 'settings_local'
 from cloudcix import api
 from cloudcix.utils import (get_admin_session, get_admin_client, settings,
     KeystoneSession)

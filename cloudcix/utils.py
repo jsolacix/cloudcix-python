@@ -46,7 +46,10 @@ class LazySettings(object):
             raise ImportError("You must specify the CLOUDCIX_SETTINGS_MODULE "
                               "environment variable.")
         else:
-            self._wrapped = importlib.import_module(settings_module)
+            settings_module = settings_module.split(":")
+            self._wrapped = importlib.import_module(settings_module[0])
+            if len(settings_module) > 1:
+                self._wrapped = getattr(self._wrapped, settings_module[1])
 
 
 settings = LazySettings()
