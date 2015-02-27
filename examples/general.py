@@ -19,7 +19,7 @@ os.environ['CLOUDCIX_SERVER_URL'] = 'https://api.cloudcix.com/'
 # following environment variables as well
 os.environ['CLOUDCIX_API_USERNAME'] = 'user@cloudcix.com'
 os.environ['CLOUDCIX_API_PASSWORD'] = 'super53cr3t3'
-os.environ['CLOUDCIX_API_ID_MEMBER'] = 2243
+os.environ['CLOUDCIX_API_ID_MEMBER'] = "2243"
 os.environ['OPENSTACK_KEYSTONE_URL'] = 'https://keystone.cloudcix.com:5000/v3'
 
 ###############################################################################
