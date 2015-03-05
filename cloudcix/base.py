@@ -174,6 +174,25 @@ class APIClient(object):
         """
         return self._call('delete', token, pk, params=params, **kwargs)
 
+    def bulk_delete(self, token=None, params=None, **kwargs):
+        """Used to delete a part of collection. Request body should contain a
+        list of elements that should be deleted
+
+        :param token: Optional, Token to be used for the request.
+                      Must be present if method requires authentication.
+        :type token: str | unicode
+        :param dict params: Optional, Query params to be sent along with the
+                            request.
+        :param kwargs: Any positional arguments required but the service
+                       method. For example if method is available at
+                       /Membership/v1/Member/<idMember>/Territories/
+                       you should pass in idMember=xxx as part of kwargs.
+                       Additionally any other parameters that should be passed
+                       to requests library call
+        :returns: requests.Response
+        """
+        return self._call('delete', token, params=params, **kwargs)
+
     def list(self, token=None, params=None, **kwargs):
         """Used to list resources in a collection.
 
