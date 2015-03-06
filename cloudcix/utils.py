@@ -70,14 +70,14 @@ def get_required_settings():
     return settings_obj
 
 
-def get_admin_session():
+def get_admin_session(**kw):
     settings_obj = get_required_settings()
     t = CloudCIXAuth(
         auth_url=settings_obj['auth_url'],
         username=settings_obj['username'],
         password=settings_obj['password'],
         idMember=settings_obj['idMember'],
-        scope={'domain': {'id': settings_obj['idMember']}})
+        **kw)
     admin_session = KeystoneSession(auth=t)
     admin_session.get_token()
     return admin_session
