@@ -35,7 +35,7 @@ Required `CLOUDCIX` and `OPENSTACK` settings
     CLOUDCIX_SERVER_URL = 'https://api.cloudcix.com'
     CLOUDCIX_API_USERNAME = 'user@cloudcix.com'
     CLOUDCIX_API_PASSWORD = 'super53cr3t3'
-    CLOUDCIX_API_ID_MEMBER = 2243
+    CLOUDCIX_API_ID_MEMBER = '2243'
     OPENSTACK_KEYSTONE_URL = 'http://keystone.cloudcix.com:5000/v3'
 
 As an alternative when used from console the settings can be set as environment
@@ -81,7 +81,7 @@ following environment variables as well
         auth_url=settings.OPENSTACK_KEYSTONE_URL,
         username='john@doe.com',
         password='ubersecret',
-        idMember=2243)
+        idMember='2243')
     auth_session = KeystoneSession(auth=auth)
     user_token = auth_session.get_token()
     token_data = auth_session.auth.auth_ref

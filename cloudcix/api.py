@@ -97,3 +97,11 @@ class documentation(object):
     _application_name = 'Documentation'
     application = APIClient(application=_application_name,
                             service_uri='Application/')
+
+
+class app_manager(object):
+    _application_name = 'AppFramework'
+    app = APIClient(application='AppManager',
+                    service_uri='App/')
+    app_menu = APIClient(application='AppManager',
+                         service_uri='App/%(idApp)s/MenuItem/')
