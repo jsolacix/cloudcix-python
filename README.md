@@ -1,6 +1,6 @@
-# Python SDK for CloudCIX API #
+# Python Bindings for CloudCIX API #
 
-An Python SDK implementation to make the work with CloudCIX API fun.
+Python bindings and utils to make the work with CloudCIX API fun.
 
 API Docs: http://docs.cloudcix.com
 
